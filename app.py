@@ -14,7 +14,7 @@ def index():
         buffered=io.BytesIO()
         img.save(buffered,format="PNG")
         img_str=base64.b64encode(buffered.getvalue()).decode('utf-8')
-        
+
 
         return redirect(url_for('qrgen',img_str=img_str))
     return render_template('index.html')
@@ -23,4 +23,4 @@ def index():
 def qrgen():
     img_str=request.args.get('img_str')
     return render_template('qr.html',img_str=img_str)
-app.run(debug=True)    
+app.run(host="0.0.0.0", post="80" ,debug=True)    
