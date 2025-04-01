@@ -23,4 +23,4 @@ def index():
 def qrgen():
     img_str=request.args.get('img_str')
     return render_template('qr.html',img_str=img_str)
-app.run(host="0.0.0.0", post="80" ,debug=True)    
+app.run(host="0.0.0.0", port="80" ,debug=True)    
